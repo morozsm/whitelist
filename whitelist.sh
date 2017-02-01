@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# Remove IP address from /etc/hosts.deny and add it to whitelist.
+
 service denyhosts stop
 echo "$1" >>  /var/lib/denyhosts/allowed-hosts
 sed -i "/$1/d" /etc/hosts.deny
